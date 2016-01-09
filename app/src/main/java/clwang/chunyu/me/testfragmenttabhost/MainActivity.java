@@ -13,9 +13,9 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FragmentTabHost mTabHost;
+    @Bind(android.R.id.tabhost) FragmentTabHost mTabHost;
 
-    //定义数组来存放按钮图片
+    // 图片
     @DrawableRes
     private int mImages[] = {
             R.drawable.tab_counter,
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.tab_center
     };
 
+    // 标题
     private String mFragmentTags[] = {
             "counter",
             "assistant",
@@ -36,14 +37,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
+        ButterKnife.bind(this);
+
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
-        mTabHost.getTabWidget().setDividerDrawable(null);
+        mTabHost.getTabWidget().setDividerDrawable(null); // 去掉分割线
 
         for (int i = 0; i < mImages.length; i++) {
-            // 为每一个Tab按钮设置图标、文字和内容
+            // Tab按钮添加文字和图片
             TabHost.TabSpec tabSpec = mTabHost.newTabSpec(mFragmentTags[i]).setIndicator(getImageView(i));
-            // 将Tab按钮添加进Tab选项卡中
+            // 添加Fragment
             mTabHost.addTab(tabSpec, FragmentTab.class, null);
             // 设置Tab按钮的背景
             mTabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.color.pedo_actionbar_bkg);
@@ -52,10 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
     private View getImageView(int index) {
         View view = getLayoutInflater().inflate(R.layout.view_tab_indicator, null);
-
         ImageView imageView = (ImageView) view.findViewById(R.id.tab_iv_image);
         imageView.setImageResource(mImages[index]);
-
         return view;
     }
 }
