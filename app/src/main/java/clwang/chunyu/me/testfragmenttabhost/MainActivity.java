@@ -1,5 +1,6 @@
 package clwang.chunyu.me.testfragmenttabhost;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.support.v4.app.FragmentTabHost;
@@ -52,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // 获得图片资源
     private View getImageView(int index) {
+        @SuppressLint("InflateParams")
         View view = getLayoutInflater().inflate(R.layout.view_tab_indicator, null);
         ImageView imageView = (ImageView) view.findViewById(R.id.tab_iv_image);
         imageView.setImageResource(mImages[index]);

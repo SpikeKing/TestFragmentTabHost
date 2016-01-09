@@ -41,6 +41,7 @@ public class FragmentTab extends Fragment {
 
     @Override public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // 显示Fragment的Tag信息
         mTvText.setText(String.valueOf("Page: " + getTag()));
     }
 
