@@ -5,8 +5,6 @@ FragmentTabHost作为Android4.0版本的控件, 已经被项目广泛使用, 5.0
 
 Github[下载地址](https://github.com/SpikeKing/TestFragmentTabHost)
 
-![TabHost](http://img.blog.csdn.net/20160110080020199)
-
 主要包括:
 (1) 自定义Tab的图片资源和去掉分割线.
 (2) 缓存Fragment的布局, 减少填充.
