@@ -12,6 +12,11 @@ import android.widget.TabHost;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * 主页, 切换Tab标签显示不同页面.
+ *
+ * @author C.L.Wang
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Bind(android.R.id.tabhost) FragmentTabHost mTabHost;
