@@ -1,5 +1,5 @@
 # TestFragmentTabHost
-FragmentTabHost的使用方法和注意事项.
+FragmentTabHost 布局的使用及优化方式
 
 > 欢迎Follow我的[GitHub](https://github.com/SpikeKing)
 
